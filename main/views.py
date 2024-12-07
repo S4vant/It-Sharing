@@ -66,7 +66,7 @@ def edit_company(request, company_id):
     user = request.user  # Текущий пользователь
     company = get_object_or_404(companies, id=company_id)
     if not user.is_authenticated or not user.is_company or user.company != company and not user.is_superuser:
-        return HttpResponse("Вы не можете редактировать эту компанию.")
+        raise ValidationError("Вы не можете редактировать компанию.")
 
     # Обработка POST-запроса для сохранения изменений
     if request.method == 'POST':
@@ -81,7 +81,7 @@ def edit_company(request, company_id):
  #Вывод Профиля компании
 def company_detail(request, company_id):
     company = get_object_or_404(companies, id=company_id)
-    reviews = company.reviews.all()
+    reviews = Review.objects.filter(order__company=company)
     form = ReviewForm()
 
     if request.method == 'POST':
