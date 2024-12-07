@@ -81,7 +81,7 @@ def edit_company(request, company_id):
  #Вывод Профиля компании
 def company_detail(request, company_id):
     company = get_object_or_404(companies, id=company_id)
-    reviews = company.reviews.all()
+    reviews = Review.objects.filter(order__company=company)
     form = ReviewForm()
 
     if request.method == 'POST':

@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="New">
-
+    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="Установил Pillow и поменял модели баз данных">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +26,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;S4vant&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/S4vant/It-Sharing.git&quot;,
+    &quot;accountId&quot;: &quot;002a2c9d-6fe8-4468-89c9-32f03158dd08&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2psi9knKQaGvybYkdewS0ROPmiK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -31,8 +49,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "master",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "last_opened_file_path": "C:/RealNeed/Prodprogramming/sharingit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "repository"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -79,6 +110,8 @@
       <updated>1733561034154</updated>
       <workItem from="1733561035246" duration="767000" />
       <workItem from="1733568102388" duration="519000" />
+      <workItem from="1733590645281" duration="257000" />
+      <workItem from="1733590938977" duration="1489000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -120,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733565135094</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Установил Pillow и поменял модели баз данных">
+      <option name="closed" value="true" />
+      <created>1733591236249</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733591236249</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +194,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="Новая попытка" />
     <MESSAGE value="New" />
-    <option name="LAST_COMMIT_MESSAGE" value="New" />
+    <MESSAGE value="Установил Pillow и поменял модели баз данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="Установил Pillow и поменял модели баз данных" />
   </component>
 </project>

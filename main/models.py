@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.urls import reverse
+from django.utils.timezone import now
 
 from sharingit import settings
 
@@ -55,9 +56,8 @@ class companies(models.Model):
     title = models.CharField(max_length=255, verbose_name="Название")
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL",null=True,blank=True,)
     content = models.TextField(blank=True, verbose_name="Описание компании",null=True)
-    #photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name="Фото")
-    # time_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
-    # time_update = models.DateTimeField(auto_now=True, verbose_name="Время изменения")
+    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name="Фото",null=True,blank=True)
+    time_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
     is_active = models.BooleanField(default=True, verbose_name="Активна")
     raiting = models.FloatField(default=0,max_length=1, verbose_name="Рейтинг")
     cat = models.ManyToManyField(Category, related_name='companies', verbose_name="Категории",
@@ -75,23 +75,82 @@ class companies(models.Model):
         ordering = ['id']
 
     def recalculate_rating(self):
-        reviews = self.reviews.all()
+        # Получение всех заказов компании
+        orders = self.order.all()
+        # Сбор всех отзывов, связанных с заказами
+        reviews = Review.objects.filter(order__in=orders)
+        # Расчет среднего рейтинга
         if reviews.exists():
-            self.raiting = reviews.aggregate(models.Avg('rating'))['rating__avg']
+            self.raiting = sum(review.rating for review in reviews) / reviews.count()
         else:
             self.raiting = 0
+
         self.save()
+
+class Order(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'В ожидании ответа компании'),
+        ('accepted', 'Принят компанией'),
+        ('declined', 'Отклонен компанией'),
+        ('completed_on_time', 'Выполнен в срок'),
+        ('completed_late', 'Выполнен, но с нарушением сроков'),
+        ('not_completed', 'Не выполнен'),
+        ('rejected_by_client', 'Заказчик отказался принимать работу'),
+    ]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        verbose_name="Пользователь",
+        related_name="orders"
+    )
+    company = models.ForeignKey(
+        'companies',
+        on_delete=models.CASCADE,
+        related_name="order",
+        verbose_name="Компания"
+    )
+    description = models.TextField(verbose_name="Описание заказа")
+    status = models.CharField(
+        max_length=50,
+        choices=STATUS_CHOICES,
+        default='pending',
+        verbose_name="Статус заказа"
+    )
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания заказа")
+    delivery_time = models.DateTimeField(
+        verbose_name="Время сдачи",
+        null=True,
+        blank=True,
+        help_text="Дата и время завершения заказа"
+    )
+
+    def __str__(self):
+        return f"Заказ от {self.user.username} для {self.company.title}"
+
+    def save(self, *args, **kwargs):
+        # Если статус меняется на выполненный, записать текущую дату и время
+        if self.status in ['completed_on_time', 'completed_late'] and not self.delivery_time:
+            self.delivery_time = now()
+        super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = "Заказ"
+        verbose_name_plural = "Заказы"
+
 class Review(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         verbose_name="Пользователь"
     )
-    company = models.ForeignKey(
-        'companies',
+    order = models.ForeignKey(
+        'Order',
         on_delete=models.CASCADE,
+        verbose_name="Заказ",
         related_name="reviews",
-        verbose_name="Компания"
+        null=True,  # Позволяет хранить null в базе данных
+        blank=True  # Делает поле необязательным для заполнения в формах
     )
     content = models.TextField(verbose_name="Отзыв")
     rating = models.PositiveSmallIntegerField(
@@ -101,14 +160,6 @@ class Review(models.Model):
     )
     created_at = models.DateTimeField(auto_now=True, verbose_name="Дата создания")
 
-    def __str__(self):
-        return f"Отзыв от {self.user.username} для {self.company.title}"
-
     class Meta:
         verbose_name = "Отзыв"
         verbose_name_plural = "Отзывы"
-
-    def save(self, *args, **kwargs):
-        if Review.objects.filter(user=self.user, company=self.company).exists():
-            raise ValidationError("Вы уже оставляли отзыв для этой компании.")
-        super().save(*args, **kwargs)
