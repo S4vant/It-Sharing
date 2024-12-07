@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}IT-SHARING | Редактирование профиля{% endblock %}
+
+{% block content %}
+<div class="lk-container">
+    <h1>Редактирование профиля</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-error">{{ form.non_field_errors }}</div>
+        {% for field in form %}
+        <div class="lk-form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+        </div>
+        <div class="form-error">{{ field.errors }}</div>
+        {% endfor %}
+        <div class="lk-form-actions">
+            <button type="submit">Сохранить изменения</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Редактирование компании: {{ company.title }}{% endblock %}
+
+{% block content %}
+<h1>Редактирование компании: {{ company.title }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
+
+<a href="{% url 'company_detail' company.id %}">Вернуться к компании</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}IT-SHARING | Редактирование Новости{% endblock %}
+
+{% block content %}
+    <div class="news-create-page">
+        <h1>Форма для новостей</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% for f in form %}
+            <div class="news-create-page-form-group">
+        <label  for="{{ f.id_for_label }}">{{f.label}}</label>
+            {{ f }}
+        </div>
+        <div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+            <div class="news-create-btn"><button type="submit">Изменить новость</button></div>
+        </form>
+        <div class="features"> <a>{{ form.time_update|date:"d-m-Y H:i:s" }}</a> </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+<div class="login-container">
+    <h1>Регистрация</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    {% for f in form %}
+    <div class="form-group">
+        <label for="{{ f.id_for_label }}">{{f.label}}</label>
+        {{ f }}
+    </div>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+    <div class="form-group">
+        <button type="submit">Зарегистрироваться</button>
+    </div>
+</div>
+</form>
+
+{% endblock %}

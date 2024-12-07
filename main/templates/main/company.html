@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Список компаний{% endblock %}
+
+{% block content %}
+<div class="companies-container">
+    <h1>Список компаний</h1>
+
+    <!-- Форма фильтрации -->
+    <form method="get" class="filter-form">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Применить фильтр</button>
+    </form>
+
+    <!-- Список компаний -->
+    {% if companies %}
+        {% for company in companies %}
+        <a href="{% url 'company_detail' company.id %}">
+            <div class="company-page-list">
+                <h1>{{ company.title }}</h1>
+                <p>{{ company.content|truncatechars:100 }}</p>
+                <p>Рейтинг: {{ company.raiting }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    {% else %}
+        <p>Компаний пока нет.</p>
+    {% endif %}
+</div>
+{% endblock %}

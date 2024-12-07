@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}IT-SHARING | Главная{% endblock %}
+
+{% block content %}
+    <div class="main">      
+        <section class="welcome-banner">
+            <div class="banner-container">
+              <div class="banner-content">
+                <h1>Добро пожаловать на</h1>
+                <div class="it-sharing">IT-SHARING</div>
+                <p>IT-Sharing — это агрегатор IT-компаний, где вы легко найдёте подходящих партнеров, исполнителей или работодателей. Используйте мощные фильтры для удобного поиска!</p>
+          
+                <form class="search-form" action="/search" method="GET">
+                  <div class="search-fields">
+                    <input type="text" name="query" placeholder="Введите ключевое слово" class="search-input">
+                    <button type="submit" class="search-button">Найти</button>
+                  </div>
+                </form>
+              </div>
+              <div class="banner-image">
+                <a href="#"><img src="static/main/img/test.jpg" alt=""></a>
+              </div>
+            </div>
+          </section>        
+        </div>
+{% endblock %}

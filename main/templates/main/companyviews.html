@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Список компаний{% endblock %}
+
+{% block content %}
+<div class="companies-container">
+    <h1>Список компаний</h1>
+    {% if companies %}
+        <ul>
+            {% for company in companies %}
+                <li>
+                    <a>{{ company.title }}</a>
+                    <p>{{ company.content|truncatechars:100 }}</p>
+                    <p>Рейтинг: {{ company.raiting }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Компаний пока нет.</p>
+    {% endif %}
+</div>
+{% endblock %}

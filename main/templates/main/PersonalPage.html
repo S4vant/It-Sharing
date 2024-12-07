@@ -1,0 +1,52 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}IT-SHARING | Редактирование профиля{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container-profile-info">
+        <h1>Личный кабинет</h1>
+        <br>
+        <div class="profile-info">
+            <label>Отображаемое имя:</label>
+            <p>{{ user.username }}</p>
+        </div>
+        <div class="profile-info">
+            <label>Логин:</label>
+            <p>{{ user.username }}</p>
+        </div>
+        <div class="profile-info">
+            <label>Почта:</label>
+            <p>{{ user.email }}</p>
+        </div>
+        <div class="profile-info">
+            <label>Краткая информация о себе:</label>
+            <p>{{ user.about }}</p>
+        </div>
+        <div class="profile-info">
+            <label>Полное описание о себе:</label>
+            <p>{{ user.description }}</p>
+        </div>
+
+        {% if user.is_authenticated and user.is_company and user.company %}
+        <div class="profile-info">
+            <label>Представитель компании:</label>
+            <a href="{% url 'company_detail' user.company.id %}">
+                <div class="edit-profile">{{ user.company.title }}</div>
+            </a>
+
+        </div>
+        {% else %}
+        <div class="profile-info">
+            <p>Вы не являетесь представителем компании.</p>
+        </div>
+        {% endif %}
+
+        <div class="profile-actions">
+            <a href="{% url 'PersonalPage_edit' %}">
+                <div class="edit-profile">Редактировать</div>
+            </a>
+        </div>
+    </div>
+</body>
+{% endblock %}
