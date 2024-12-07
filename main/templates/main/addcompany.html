@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="Add-Company">
-    <h1>Регистрация новой компании</h1>
+    <h1>Форма регистрации новой компании</h1>
     <form method="POST">
         {% csrf_token %}
         <div class="form-error">{{ form.non_field_errors }}</div>
