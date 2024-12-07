@@ -53,8 +53,10 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/RealNeed/Prodprogramming/sharingit",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -115,6 +117,7 @@
       <workItem from="1733568102388" duration="519000" />
       <workItem from="1733590645281" duration="257000" />
       <workItem from="1733590938977" duration="14930000" />
+      <workItem from="1733611086607" duration="218000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
