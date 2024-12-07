@@ -31,14 +31,11 @@
         {% if user.is_authenticated and user.is_company and user.company %}
         <div class="profile-info">
             <label>Представитель компании:</label>
+            <div class="profile-actions">
             <a href="{% url 'company_detail' user.company.id %}">
                 <div class="edit-profile">{{ user.company.title }}</div>
             </a>
-
         </div>
-        {% else %}
-        <div class="profile-info">
-            <p>Пользователь не представитель компании.</p>
         </div>
         {% endif %}
 

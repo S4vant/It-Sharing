@@ -3,13 +3,18 @@
 {% block title %}Редактирование компании: {{ company.title }}{% endblock %}
 
 {% block content %}
+<div class="Add-Company">
 <h1>Редактирование компании: {{ company.title }}</h1>
 
 <form method="post">
     {% csrf_token %}
+    <div class="Add-Company-form-group">
     {{ form.as_p }}
-    <button type="submit">Сохранить изменения</button>
+    </div>
+    <div class="Add-Company-form-actions">
+        <button type="submit">Сохранить изменения</button>
+    </div>
 </form>
-
 <a href="{% url 'company_detail' company.id %}">Вернуться к компании</a>
+</div>
 {% endblock %}
