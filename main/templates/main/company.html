@@ -3,16 +3,17 @@
 {% block title %}Список компаний{% endblock %}
 
 {% block content %}
-<div class="companies-container">
-    <h1>Список компаний</h1>
+<div class="companies-container-filter">
+
 
     <!-- Форма фильтрации -->
     <form method="get" class="filter-form">
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Применить фильтр</button>
+        <button type="submit" class="edit-profile">Применить фильтр</button>
     </form>
-
-    <!-- Список компаний -->
+</div>
+<div class="companies-container">    <!-- Список компаний -->
+    <h1>Список компаний</h1>
     {% if companies %}
         {% for company in companies %}
         <a href="{% url 'company_detail' company.id %}">
