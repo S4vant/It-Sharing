@@ -1,6 +1,7 @@
 {% extends 'main/layout.html' %}
 
 {% block content %}
+<div class="Add-Company">
   <h2>Заказ от {{ order.user.username }}</h2>
   <p><strong>Компания:</strong> {{ order.company.title }}</p>
   <p><strong>Описание:</strong> {{ order.description }}</p>
@@ -13,6 +14,7 @@
     {% else %}
       Отказано
     {% endif %}
+  </div>
   </p>
 
   {% if order.status == 'pending' and order.company == request.user %}
