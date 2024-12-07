@@ -57,7 +57,7 @@ class AddPostForm(forms.ModelForm): #Нужная штука
 class CompanyForm(forms.ModelForm):# форма для компании
     class Meta:
         model = companies
-        fields = ['title', 'content', 'raiting', 'cat']  # Указываем поля, которые будут в форме
+        fields = ['title', 'content', 'cat']  # Указываем поля, которые будут в форме
         widgets = {
             'cat': forms.CheckboxSelectMultiple(),  # Это создаст поле для выбора нескольких категорий
             'content': forms.Textarea(attrs={'rows': 4, 'cols': 40}),  # Для поля 'content' создаём многострочное поле

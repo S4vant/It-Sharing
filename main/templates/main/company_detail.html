@@ -29,7 +29,8 @@
                 {% endfor %}
             </ul>
         </div>
-     {% if user.is_authenticated and user.is_company and user.company == company or user.is_superuser %}
+        
+     {% if user.is_authenticated  and user.is_company and user.company == company or user.is_superuser%}
         <div class="profile-actions">
 
             <a href="{% url 'edit_company' company.id %}">

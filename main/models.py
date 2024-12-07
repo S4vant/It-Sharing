@@ -44,6 +44,7 @@ class Membership(models.Model):
     company = models.ForeignKey('companies', on_delete=models.CASCADE, verbose_name="Компания")
     joined_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата добавления")
 
+
     class Meta:
         unique_together = ("user", "company")  # Ограничение: один пользователь в одной компании только один раз
 
