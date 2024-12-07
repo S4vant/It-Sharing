@@ -4,15 +4,12 @@
 
 {% block content %}
 <div class="companies-container-filter">
-
-
-    <!-- Форма фильтрации -->
     <form method="get" class="filter-form">
         {{ form.as_p }}
         <button type="submit" class="edit-profile">Применить фильтр</button>
     </form>
 </div>
-<div class="companies-container">    <!-- Список компаний -->
+<div class="companies-container">
     <h1>Список компаний</h1>
     {% if companies %}
         {% for company in companies %}
@@ -25,7 +22,7 @@
         </a>
         {% endfor %}
     {% else %}
-        <p>Компаний пока нет.</p>
+        <h1>Компаний пока нет.</h1>
     {% endif %}
 </div>
 {% endblock %}

@@ -5,7 +5,7 @@
 {% block content %}
 <body>
     <div class="container-profile-info">
-        <h1>Личный кабинет</h1>
+        <h1>Кабинет компании</h1>
         <br>
         <div class="profile-info">
             <label>Название компании:</label>
@@ -28,7 +28,24 @@
                     <li>Нет категорий</li>
                 {% endfor %}
             </ul>
+        
+        
         </div>
+    {% if user.is_authenticated and user.company != company %}
+        
+    <div class="profile-actions">        
+    <a href="{% url 'create_order' company.id %}">
+                <div class="edit-profile">Составить заказ</div>
+            </a>
+    </div>
+    {% endif %}
+        {% if user.is_authenticated and user.company == company %}
+        <div class="profile-actions">  
+    <a href="{% url 'see_orders' company.id %}">
+        <div class="edit-profile">Посмотреть Заказы</div>
+    </a>
+    </div>
+{% endif %}
         
      {% if user.is_authenticated  and user.is_company and user.company == company or user.is_superuser%}
         <div class="profile-actions">
@@ -40,16 +57,21 @@
         {% endif %}
     </div>
 
-    {% if user.is_authenticated %}
-        <h2>Оставить отзыв</h2>
+    {% if user.is_authenticated and user.company != company %}
+    <div class="container-profile-info">
+        <h1>Оставить отзыв</h1>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Отправить</button>
+            <div class="news-create-btn">
+            <button type="submit">Отправить</button></div>
         </form>
-    {% else %}
-        <p>Вы должны <a href="{% url 'login' %}">войти</a>, чтобы оставить отзыв.</p>
+    </div>
+
+    {% elif user.is_authenticated == False %}
+    <p>Вы должны <a href="{% url 'login' %}">войти</a>, чтобы оставить отзыв.</p>
     {% endif %}
+
 
     {% for review in reviews %}
     <div class="review-container">

@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="Add-Company">
+  <h2>Заказ от {{ order.user.username }}</h2>
+  <p><strong>Компания:</strong> {{ order.company.title }}</p>
+  <p><strong>Описание:</strong> {{ order.description }}</p>
+  <p><strong>Срок выполнения:</strong> {{ order.deadline }}</p>
+  <p><strong>Статус:</strong> 
+    {% if order.status == 'pending' %}
+      Ожидает выполнения
+    {% elif order.status == 'completed' %}
+      Выполнен
+    {% else %}
+      Отказано
+    {% endif %}
+  </div>
+  </p>
+
+  {% if order.status == 'pending' and order.company == request.user %}
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Отказаться от заказа</button>
+    </form>
+  {% endif %}
+{% endblock %}

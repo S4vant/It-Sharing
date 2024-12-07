@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="Add-Company">
+  <h1>Составление заказа</h1>
+  <form method="POST">
+      {% csrf_token %}
+      <div class="Add-Company-form-group">
+        {{ form.as_p }}
+      </div>
+      <div class="Add-Company-form-actions">
+          <button type="submit">Сохранить изменения</button>
+      </div>
+  </form>
+</div>
+
+{% endblock %}

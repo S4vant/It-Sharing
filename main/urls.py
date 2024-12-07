@@ -14,4 +14,7 @@ urlpatterns = [
     path('profile/edit/', views.edit_profile, name='PersonalPage_edit'),
     path('company/detail/<int:company_id>/', views.company_detail, name='company_detail'),
     path('company/edit/<int:company_id>/', views.edit_company, name='edit_company'),
+    path('order/create/<int:company_id>/', views.create_order, name='create_order'),
+    path('order/<int:order_id>/', views.order_detail, name='order_detail'),
+    path('company/<int:company_id>/orders/', views.see_orders, name='see_orders'),
 ]

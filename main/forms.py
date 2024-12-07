@@ -106,3 +106,18 @@ class ReviewForm(forms.ModelForm): #форма для отзывов о комп
             'content': forms.Textarea(attrs={'class': 'form-control'}),
             'rating': forms.Select(attrs={'class': 'form-control'}),
         }
+from django import forms
+from .models import Order
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ['company','description']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Проверка на выбранную компанию, если это необходимо
+        if 'company' in self.initial:
+            company = self.initial['company']
+            if not company:
+                raise ValidationError("Компания не может быть пустой")
