@@ -4,16 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="Установил Pillow и поменял модели баз данных">
+    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд">
+      <change afterPath="$PROJECT_DIR$/main/templates/main/create_order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/main/order_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/main/see_orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/company_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/company_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="origin/main" />
@@ -49,6 +61,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "master",
@@ -111,7 +124,7 @@
       <workItem from="1733561035246" duration="767000" />
       <workItem from="1733568102388" duration="519000" />
       <workItem from="1733590645281" duration="257000" />
-      <workItem from="1733590938977" duration="1489000" />
+      <workItem from="1733590938977" duration="14460000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -161,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733591236249</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд">
+      <option name="closed" value="true" />
+      <created>1733592756339</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733592756339</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +216,7 @@
     <MESSAGE value="Новая попытка" />
     <MESSAGE value="New" />
     <MESSAGE value="Установил Pillow и поменял модели баз данных" />
-    <option name="LAST_COMMIT_MESSAGE" value="Установил Pillow и поменял модели баз данных" />
+    <MESSAGE value="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд" />
+    <option name="LAST_COMMIT_MESSAGE" value="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд" />
   </component>
 </project>
