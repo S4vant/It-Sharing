@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/forms.py" afterDir="false" />
-    </list>
+    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +21,7 @@
     <option name="BRANCH" value="origin/master" />
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/master" />
+    <option name="NEW_BASE" value="origin/main" />
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
@@ -38,12 +34,12 @@
     &quot;assignee&quot;: &quot;S4vant&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/S4vant/It-Sharing",
-    "accountId": "002a2c9d-6fe8-4468-89c9-32f03158dd08"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/S4vant/It-Sharing.git&quot;,
+    &quot;accountId&quot;: &quot;002a2c9d-6fe8-4468-89c9-32f03158dd08&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -61,7 +57,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/RealNeed/Prod/itsharigLoc",
+    "last_opened_file_path": "C:/RealNeed/Prodprogramming/sharingit",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -122,8 +118,6 @@
       <workItem from="1733590645281" duration="257000" />
       <workItem from="1733590938977" duration="14930000" />
       <workItem from="1733611086607" duration="218000" />
-      <workItem from="1733611319111" duration="445000" />
-      <workItem from="1733611787566" duration="845000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -189,15 +183,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733605872132</updated>
     </task>
-    <task id="LOCAL-00009" summary="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд">
-      <option name="closed" value="true" />
-      <created>1733611557553</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1733611557553</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +200,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
