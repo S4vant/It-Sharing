@@ -28,7 +28,21 @@
                     <li>Нет категорий</li>
                 {% endfor %}
             </ul>
+        
+        
         </div>
+    {% if user.is_authenticated and user.company != company %}
+        
+        
+    <a href="{% url 'create_order' company.id %}">
+                <div class="edit-profile">Составить заказ</div>
+            </a>
+    {% endif %}
+        {% if user.is_authenticated and user.company == company %}
+    <a href="{% url 'see_orders' company.id %}">
+        <div class="edit-profile">Посмотреть Заказы</div>
+    </a>
+{% endif %}
         
      {% if user.is_authenticated  and user.is_company and user.company == company or user.is_superuser%}
         <div class="profile-actions">
@@ -40,7 +54,9 @@
         {% endif %}
     </div>
 
-    {% if user.is_authenticated %}
+    {% if user.is_authenticated and user.company != company %}
+        
+        
         <h2>Оставить отзыв</h2>
         <form method="post">
             {% csrf_token %}

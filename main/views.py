@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView
 from django.core.exceptions import PermissionDenied
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView, UpdateView
@@ -99,6 +99,65 @@ def company_detail(request, company_id):
         'reviews': reviews,
         'form': form,
     })
+# class CreateOrder(LoginRequiredMixin, DataMixin, CreateView):
+#     form_class = OrderForm
+#     template_name = 'main/create_order.html'
+#     success_url = reverse_lazy('home')
+#     login_url = reverse_lazy('home')
+#     raise_exception = True
+#
+#     def get_context_data(self, *, object_list=None, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         c_def = self.get_user_context(title="Добавление компани")
+#         return dict(list(context.items()) + list(c_def.items()))
+
+def create_order(request, company_id):
+    if request.user.is_authenticated:
+        user = request.user
+        company = get_object_or_404(companies, id=company_id)
+        # Проверка, существует ли выбранная компания
+        if request.method == "POST":
+            # Здесь код для обработки создания заказа
+            form = OrderForm(request.POST)
+            if form.is_valid():
+                order = form.save(commit=False)
+                order.user = user
+                order.company = company
+                order.save()
+                return redirect('order_detail', order.id)
+
+        else:
+            form = OrderForm()
+
+        return render(request, 'main/create_order.html', {'form': form, 'company': company})
+    else:
+        return redirect('login')
+def order_detail(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    # company = get_object_or_404(companies, id=company_id)
+    if request.method == 'POST' and order.company == request.user:
+        # Компания может отказаться от заказа
+        order.status = 'rejected'
+        order.save()
+        return redirect('order_detail', order.id)
+
+    return render(request, 'main/order_detail.html', {'order': order})
+
+def see_orders(request, company_id):
+    # Получаем компанию по ID
+    company = get_object_or_404(companies, id=company_id)
+
+    # Проверяем, что текущий пользователь является владельцем компании
+    if request.user.company != company:
+        # Можно вернуть ошибку или перенаправить, если текущий пользователь не является владельцем компании
+        return redirect('home')  # Пример перенаправления на главную страницу
+
+    # Получаем все заказы для данной компании
+    orders = Order.objects.filter(company=company)
+
+    return render(request, 'main/see_orders.html', {'company': company, 'orders': orders})
+
+
 #Создание новой компании
 class AddPage(LoginRequiredMixin, DataMixin, CreateView):
     form_class = AddPostForm
