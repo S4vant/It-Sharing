@@ -4,128 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="New">
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/BdfFontFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/BlpImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/BmpImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/BufrStubImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ContainerIO.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/CurImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/DcxImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/DdsImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/EpsImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ExifTags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/FitsImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/FliImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/FontFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/FpxImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/FtexImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/GbrImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/GdImageFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/GifImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/GimpGradientFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/GimpPaletteFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/GribStubImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/Hdf5StubImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/IcnsImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/IcoImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/Image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageChops.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageCms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageColor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageDraw.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageDraw2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageEnhance.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageFilter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageFont.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageGrab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageMath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageMode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageMorph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageOps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImagePalette.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImagePath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageQt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageSequence.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageShow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageStat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageTk.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageTransform.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImageWin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/ImtImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/IptcImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/Jpeg2KImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/JpegImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/JpegPresets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/McIdasImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/MicImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/MpegImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/MpoImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/MspImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PSDraw.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PaletteFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PalmImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PcdImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PcfFontFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PcxImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PdfImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PdfParser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PixarImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PngImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PpmImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/PsdImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/QoiImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/SgiImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/SpiderImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/SunImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/TarIO.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/TgaImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/TiffImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/TiffTags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/WalImageFile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/WebPImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/WmfImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/XVThumbImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/XbmImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/XpmImagePlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_binary.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_deprecate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imaging.cp312-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imaging.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingcms.cp312-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingcms.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingft.cp312-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingft.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingmath.cp312-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingmath.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingmorph.cp312-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingmorph.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingtk.cp312-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_imagingtk.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_tkinter_finder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_typing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_webp.cp312-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/_webp.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/features.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/py.typed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/PIL/report.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/pillow-11.0.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/pillow-11.0.0.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/pillow-11.0.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/pillow-11.0.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/pillow-11.0.0.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/pillow-11.0.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/pillow-11.0.0.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.venv/Lib/site-packages/pillow-11.0.0.dist-info/zip-safe" afterDir="false" />
+    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="Установил Pillow и поменял модели баз данных">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,21 +26,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "S4vant"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;S4vant&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/S4vant/It-Sharing.git",
-    "accountId": "002a2c9d-6fe8-4468-89c9-32f03158dd08"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/S4vant/It-Sharing.git&quot;,
+    &quot;accountId&quot;: &quot;002a2c9d-6fe8-4468-89c9-32f03158dd08&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2psi9knKQaGvybYkdewS0ROPmiK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -169,6 +52,9 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/RealNeed/Prodprogramming/sharingit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -225,6 +111,7 @@
       <workItem from="1733561035246" duration="767000" />
       <workItem from="1733568102388" duration="519000" />
       <workItem from="1733590645281" duration="257000" />
+      <workItem from="1733590938977" duration="1489000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -266,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733565135094</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Установил Pillow и поменял модели баз данных">
+      <option name="closed" value="true" />
+      <created>1733591236249</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733591236249</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +194,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="Новая попытка" />
     <MESSAGE value="New" />
-    <option name="LAST_COMMIT_MESSAGE" value="New" />
+    <MESSAGE value="Установил Pillow и поменял модели баз данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="Установил Pillow и поменял модели баз данных" />
   </component>
 </project>

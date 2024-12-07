@@ -75,12 +75,18 @@ class companies(models.Model):
         ordering = ['id']
 
     def recalculate_rating(self):
-        reviews = self.reviews.all()
+        # Получение всех заказов компании
+        orders = self.order.all()
+        # Сбор всех отзывов, связанных с заказами
+        reviews = Review.objects.filter(order__in=orders)
+        # Расчет среднего рейтинга
         if reviews.exists():
-            self.raiting = reviews.aggregate(models.Avg('rating'))['rating__avg']
+            self.raiting = sum(review.rating for review in reviews) / reviews.count()
         else:
             self.raiting = 0
+
         self.save()
+
 class Order(models.Model):
     STATUS_CHOICES = [
         ('pending', 'В ожидании ответа компании'),
@@ -101,7 +107,7 @@ class Order(models.Model):
     company = models.ForeignKey(
         'companies',
         on_delete=models.CASCADE,
-        related_name="orders",
+        related_name="order",
         verbose_name="Компания"
     )
     description = models.TextField(verbose_name="Описание заказа")
