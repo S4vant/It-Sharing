@@ -13,8 +13,10 @@
       {% csrf_token %}
         {{ form }}
         <div class="form-error">{{ form.errors }}</div>
-      <button name="action" value="denied">Отказаться от заказа</button>
-        <button name="action" value="accept">Выполнено</button>
+        <div class="">
+      <button name="action" value="denied" class="edit-profile">Отказаться от заказа</button>
+      <button name="action" value="accept" class="edit-profile">Выполнено</button>
+    </div>
     </form>
   {% endif %}
   </div>
