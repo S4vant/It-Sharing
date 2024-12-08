@@ -805,7 +805,9 @@ margin-bottom: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 500px;
 }
-
+.review-list h1{
+  text-align: center;
+}
 .review-list-inner{
   color: #fff;
   background: #374151;
