@@ -12,14 +12,8 @@
               <h4>Заказ от {{ order.user.username }}</h4>
               <p><strong>Описание:</strong> {{ order.description }}</p>
               <p><strong>Срок выполнения:</strong> {{ order.deadline }}</p>
-              <p><strong>Статус:</strong>
-              {% if order.status == 'pending' %}
-                Ожидает выполнения
-              {% elif order.status == 'completed' %}
-                Выполнен
-              {% else %}
-                Отказано
-              {% endif %} </p>
+              <p><strong>Статус:</strong>{{ order.status }}
+              
             
         </a>
         </div>

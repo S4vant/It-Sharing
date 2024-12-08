@@ -112,15 +112,18 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['description','status']
+        fields = ['description','status','dead_line']
 
     widgets = {
         'status': forms.Select(attrs={'class': 'form-control'}),
+        'dead_line': forms.TimeInput(attrs={'type': 'time', 'class': 'form-control'}),
     }
     labels = {
-        'status': 'Название компании',
+        'status': 'Статус заказа',
+        'delivery_time': 'Время на выполнение',
 
     }
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # Проверка на выбранную компанию, если это необходимо

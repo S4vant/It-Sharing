@@ -8,11 +8,13 @@
   <p><strong>Срок выполнения:</strong> {{ order.deadline }}</p>
   <p><strong>Статус:</strong> 
     {{ order.status }}</p>
-{% if order.status == 'pending' and order.company == user.company %}
-    <form method="post">
+{% if order.company == user.company %}
+    <form method="POST">
       {% csrf_token %}
-        {{ form.status }}
-      <button type="submit">Отказаться от заказа</button>
+        {{ form }}
+        <div class="form-error">{{ form.errors }}</div>
+      <button name="action" value="denied">Отказаться от заказа</button>
+        <button name="action" value="accept">Выполнено</button>
     </form>
   {% endif %}
   </div>

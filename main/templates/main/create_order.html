@@ -7,6 +7,7 @@
       {% csrf_token %}
       <div class="Add-Company-form-group">
         {{ form.description }}
+          {{ form.dead_line }}
       </div>
       <div class="form-error">{{ form.errors }}</div>
       <div class="Add-Company-form-actions">

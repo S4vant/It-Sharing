@@ -92,7 +92,7 @@ class Order(models.Model):
         ('pending', 'В ожидании ответа компании'),
         ('accepted', 'Принят компанией'),
         ('declined', 'Отклонен компанией'),
-        ('completed_on_time', 'Выполнен в срок'),
+        ('completed_at', 'Выполнен в срок:'),
         ('completed_late', 'Выполнен, но с нарушением сроков'),
         ('not_completed', 'Не выполнен'),
         ('rejected_by_client', 'Заказчик отказался принимать работу'),
@@ -125,14 +125,21 @@ class Order(models.Model):
         blank=True,
         help_text="Дата и время завершения заказа"
     )
+    dead_line = models.DateTimeField(
+        verbose_name="Время на выполнение",
+        null=True,
+        blank=True,
+        help_text="время на выполнение"
+    )
 
     def __str__(self):
         return f"Заказ от {self.user.username} для {self.company.title}"
 
     def save(self, *args, **kwargs):
         # Если статус меняется на выполненный, записать текущую дату и время
-        if self.status in ['completed_on_time', 'completed_late'] and not self.delivery_time:
+        if self.status == 'completed':
             self.delivery_time = now()
+
         super().save(*args, **kwargs)
 
     class Meta:

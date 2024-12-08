@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд">
+    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="Повозился с заказами">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/create_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/create_order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/order_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/see_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/see_orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733605872132</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Повозился с заказами">
+      <option name="closed" value="true" />
+      <created>1733618196028</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733618196028</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +235,7 @@
     <MESSAGE value="New" />
     <MESSAGE value="Установил Pillow и поменял модели баз данных" />
     <MESSAGE value="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд" />
-    <option name="LAST_COMMIT_MESSAGE" value="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд" />
+    <MESSAGE value="Повозился с заказами" />
+    <option name="LAST_COMMIT_MESSAGE" value="Повозился с заказами" />
   </component>
 </project>

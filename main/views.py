@@ -137,9 +137,14 @@ def order_detail(request, order_id):
     order = get_object_or_404(Order, id=order_id)
     form = OrderForm(request.POST)
     # company = get_object_or_404(companies, id=company_id)
-    if request.method == 'POST':
-        # Компания может отказаться от заказа
-        order.status = 'rejected'
+    if request.method == "POST":
+        action = request.POST.get('action')
+        if action == "accept":
+            # Логика для "Одобрить"
+            order.status = 'completed'
+        elif action == "denied":
+            # Логика для "Отклонить"
+            order.status = 'declined'
         order.save()
         return redirect('order_detail', order.id)
 
