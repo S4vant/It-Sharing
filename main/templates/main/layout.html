@@ -26,8 +26,14 @@
         <div class="auth-buttons">
         {% if request.user.is_superuser or request.user.is_stuff %}
 
-        <a href="{% url 'create' %} "class="btn login">Добавить новость</a>
+        <a href="{% url 'create' %}"class="btn login">Добавить новость</a>
+
+        {% endif %}
+
+        {% if not request.user.is_company and not request.user.company == '' %}
         <a href="{% url 'add_page' %}"class="btn login">Добавить компанию</a>
+         {% else %}
+            <a href="{% url 'company_detail' user.company.id %}"><div class="edit-profile">{{ user.company.title }}</div></a>
         {% endif %}
 
         {% if request.user.is_authenticated %}

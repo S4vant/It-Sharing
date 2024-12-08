@@ -15,6 +15,7 @@ from .utils import *
 # Create your views here.
 #Вывод главной страницы
 def index(request):
+    user = request.user
     data = {
         'title': 'Главная страница',
     }
@@ -177,6 +178,10 @@ class AddPage(LoginRequiredMixin, DataMixin, CreateView):
     success_url = reverse_lazy('home')
     login_url = reverse_lazy('home')
     raise_exception = True
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
