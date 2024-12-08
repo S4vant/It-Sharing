@@ -15,6 +15,7 @@ from .utils import *
 # Create your views here.
 #Вывод главной страницы
 def index(request):
+    user = request.user
     data = {
         'title': 'Главная страница',
     }
@@ -137,9 +138,14 @@ def order_detail(request, order_id):
     order = get_object_or_404(Order, id=order_id)
     form = OrderForm(request.POST)
     # company = get_object_or_404(companies, id=company_id)
-    if request.method == 'POST':
-        # Компания может отказаться от заказа
-        order.status = 'rejected'
+    if request.method == "POST":
+        action = request.POST.get('action')
+        if action == "accept":
+            # Логика для "Одобрить"
+            order.status = 'completed'
+        elif action == "denied":
+            # Логика для "Отклонить"
+            order.status = 'declined'
         order.save()
         return redirect('order_detail', order.id)
 
@@ -172,6 +178,10 @@ class AddPage(LoginRequiredMixin, DataMixin, CreateView):
     success_url = reverse_lazy('home')
     login_url = reverse_lazy('home')
     raise_exception = True
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)

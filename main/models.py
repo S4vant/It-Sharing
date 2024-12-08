@@ -24,6 +24,9 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username
     #photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name="Фото")
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сначала сохраняем компанию
+        # Обновляем поле is_company у всех представителей
 
 class Category(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name="Категория")
@@ -56,13 +59,18 @@ class companies(models.Model):
     title = models.CharField(max_length=255, verbose_name="Название")
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL",null=True,blank=True,)
     content = models.TextField(blank=True, verbose_name="Описание компании",null=True)
-    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name="Фото",null=True,blank=True)
+    photo = models.ImageField(upload_to="static/main/img/companiesimg", verbose_name="Фото",null=True,blank=True)
     time_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
     is_active = models.BooleanField(default=True, verbose_name="Активна")
     raiting = models.FloatField(default=0,max_length=1, verbose_name="Рейтинг")
     cat = models.ManyToManyField(Category, related_name='companies', verbose_name="Категории",
                                  blank=True)  # Это должно быть ManyToManyField
-
+    creator = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="created_companies",
+        verbose_name="Создатель компании",
+    )
     def __str__(self):
         return self.title
 
@@ -73,6 +81,19 @@ class companies(models.Model):
         verbose_name = 'Компания'
         verbose_name_plural = 'IT компания'
         ordering = ['id']
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сначала сохраняем компанию
+        # Обновляем поле is_company у всех представителей
+        if self.creator:
+            self.creator.is_company = True
+            self.creator.company = self
+            self.creator.save()
+        for user in self.representatives.all():
+            user.is_company = True
+            self.creator.company = self
+            user.save()
+
 
     def recalculate_rating(self):
         # Получение всех заказов компании
@@ -92,7 +113,7 @@ class Order(models.Model):
         ('pending', 'В ожидании ответа компании'),
         ('accepted', 'Принят компанией'),
         ('declined', 'Отклонен компанией'),
-        ('completed_on_time', 'Выполнен в срок'),
+        ('completed_at', 'Выполнен в срок:'),
         ('completed_late', 'Выполнен, но с нарушением сроков'),
         ('not_completed', 'Не выполнен'),
         ('rejected_by_client', 'Заказчик отказался принимать работу'),
@@ -125,14 +146,21 @@ class Order(models.Model):
         blank=True,
         help_text="Дата и время завершения заказа"
     )
+    dead_line = models.DateTimeField(
+        verbose_name="Время на выполнение",
+        null=True,
+        blank=True,
+        help_text="время на выполнение"
+    )
 
     def __str__(self):
         return f"Заказ от {self.user.username} для {self.company.title}"
 
     def save(self, *args, **kwargs):
         # Если статус меняется на выполненный, записать текущую дату и время
-        if self.status in ['completed_on_time', 'completed_late'] and not self.delivery_time:
+        if self.status == 'completed':
             self.delivery_time = now()
+
         super().save(*args, **kwargs)
 
     class Meta:
