@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="Повозился с заказами">
+    <list default="true" id="3008bd17-72cc-43ba-89c3-6677d3fe338f" name="Changes" comment="Повозился с заказами и еще по мелочи">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/main/company_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/company_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,12 +43,12 @@
     &quot;assignee&quot;: &quot;S4vant&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/S4vant/It-Sharing",
-    "accountId": "002a2c9d-6fe8-4468-89c9-32f03158dd08"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/S4vant/It-Sharing&quot;,
+    &quot;accountId&quot;: &quot;002a2c9d-6fe8-4468-89c9-32f03158dd08&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -130,7 +127,8 @@
       <workItem from="1733590645281" duration="257000" />
       <workItem from="1733590938977" duration="14930000" />
       <workItem from="1733611086607" duration="218000" />
-      <workItem from="1733634516085" duration="8396000" />
+      <workItem from="1733634516085" duration="9168000" />
+      <workItem from="1733651427662" duration="5291000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -204,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733618196028</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Повозился с заказами и еще по мелочи">
+      <option name="closed" value="true" />
+      <created>1733644714706</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733644714706</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +246,7 @@
     <MESSAGE value="Установил Pillow и поменял модели баз данных" />
     <MESSAGE value="опять поменял модели баз данных, преписал перерасчет рейтинга компании от новых бд" />
     <MESSAGE value="Повозился с заказами" />
-    <option name="LAST_COMMIT_MESSAGE" value="Повозился с заказами" />
+    <MESSAGE value="Повозился с заказами и еще по мелочи" />
+    <option name="LAST_COMMIT_MESSAGE" value="Повозился с заказами и еще по мелочи" />
   </component>
 </project>

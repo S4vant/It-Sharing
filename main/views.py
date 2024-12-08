@@ -83,7 +83,10 @@ def edit_company(request, company_id):
 def company_detail(request, company_id):
     company = get_object_or_404(companies, id=company_id)
     reviews = Review.objects.filter(order__company=company)
+    order = Order.objects.filter(company=company)
     form = ReviewForm()
+
+
 
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -99,6 +102,7 @@ def company_detail(request, company_id):
         'company': company,
         'reviews': reviews,
         'form': form,
+        'order': order,
     })
 # class CreateOrder(LoginRequiredMixin, DataMixin, CreateView):
 #     form_class = OrderForm
@@ -170,7 +174,20 @@ def see_orders(request, company_id):
 
     return render(request, 'main/see_orders.html', {'company': company, 'orders': orders})
 
+class AddReviewView(LoginRequiredMixin, CreateView):
+    model = Review
+    form_class = ReviewForm
+    template_name = 'main/company_detail.html'
+    success_url = reverse_lazy('home')
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user  # Передаем текущего пользователя в форму
+        return kwargs
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user  # Устанавливаем текущего пользователя как автора отзыва
+        return super().form_valid(form)
 #Создание новой компании
 class AddPage(LoginRequiredMixin, DataMixin, CreateView):
     form_class = AddPostForm

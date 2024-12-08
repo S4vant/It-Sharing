@@ -178,8 +178,6 @@ class Review(models.Model):
         on_delete=models.CASCADE,
         verbose_name="Заказ",
         related_name="reviews",
-        null=True,  # Позволяет хранить null в базе данных
-        blank=True  # Делает поле необязательным для заполнения в формах
     )
     content = models.TextField(verbose_name="Отзыв")
     rating = models.PositiveSmallIntegerField(
@@ -188,6 +186,11 @@ class Review(models.Model):
         choices=[(i, str(i)) for i in range(1, 6)]
     )
     created_at = models.DateTimeField(auto_now=True, verbose_name="Дата создания")
+
+    def save(self, *args, **kwargs):
+        if self.order.user != self.user:
+            return ValidationError("Вы не можете оставить отзыв для заказа, который вам не принадлежит.")
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = "Отзыв"

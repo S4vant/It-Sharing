@@ -63,7 +63,9 @@
         <h1>Оставить отзыв</h1>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+{#            {{ field.description }}#}
+{#            {{ field.reiting }}#}
+            {{ form.as_table }}
             <div class="news-create-btn">
             <button type="submit">Отправить</button></div>
         </form>

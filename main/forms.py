@@ -99,14 +99,30 @@ class CompanyFilterForm(forms.Form): #Форма фильтра компаний
         label="Только активные компании",
         widget=forms.CheckboxInput(attrs={'class': 'form-check-input'})
     )
-class ReviewForm(forms.ModelForm): #форма для отзывов о компаниии
+class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['content', 'rating']
+        fields = ['content', 'rating', 'order']
         widgets = {
             'content': forms.Textarea(attrs={'class': 'form-control'}),
             'rating': forms.Select(attrs={'class': 'form-control'}),
+            'order': forms.Select(attrs={'class': 'form-control'}),
         }
+
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)  # Передаем текущего пользователя
+        self.order = kwargs.pop('order', None)
+        super().__init__(*args, **kwargs)
+        # Ограничиваем список заказов только теми, что принадлежат текущему пользователю
+        if self.user:
+            self.fields['order'].queryset = Order.objects.filter(user=self.user)
+
+    def clean_order(self):
+        order = self.cleaned_data.get('order')
+        if self.order != order:
+            raise forms.ValidationError("Вы не можете оставить отзыв для этого заказа.")
+        return order
+
 from django import forms
 from .models import Order
 
