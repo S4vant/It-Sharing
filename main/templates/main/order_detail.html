@@ -7,20 +7,17 @@
   <p><strong>Описание:</strong> {{ order.description }}</p>
   <p><strong>Срок выполнения:</strong> {{ order.deadline }}</p>
   <p><strong>Статус:</strong> 
-    {% if order.status == 'pending' %}
-      Ожидает выполнения
-    {% elif order.status == 'completed' %}
-      Выполнен
-    {% else %}
-      Отказано
-    {% endif %}
-  </div>
-  </p>
-
-  {% if order.status == 'pending' and order.company == request.user %}
+    {{ order.status }}</p>
+{% if order.status == 'pending' and order.company == user.company %}
     <form method="post">
       {% csrf_token %}
+        {{ form.status }}
       <button type="submit">Отказаться от заказа</button>
     </form>
   {% endif %}
+  </div>
+  
+
+  
+
 {% endblock %}

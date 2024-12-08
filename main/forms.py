@@ -112,8 +112,15 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['description']
+        fields = ['description','status']
 
+    widgets = {
+        'status': forms.Select(attrs={'class': 'form-control'}),
+    }
+    labels = {
+        'status': 'Название компании',
+
+    }
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # Проверка на выбранную компанию, если это необходимо

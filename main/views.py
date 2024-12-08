@@ -123,6 +123,7 @@ def create_order(request, company_id):
                 order = form.save(commit=False)
                 order.user = user
                 order.company = company
+                order.status =  'pending'
                 order.save()
                 return redirect('order_detail', order.id)
 
@@ -134,12 +135,18 @@ def create_order(request, company_id):
         return redirect('login')
 def order_detail(request, order_id):
     order = get_object_or_404(Order, id=order_id)
+    form = OrderForm(request.POST)
     # company = get_object_or_404(companies, id=company_id)
-    if request.method == 'POST' and order.company == request.user:
+    if request.method == 'POST':
         # Компания может отказаться от заказа
         order.status = 'rejected'
         order.save()
         return redirect('order_detail', order.id)
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="Заказ")
+        return dict(list(context.items()) + list(c_def.items()))
 
     return render(request, 'main/order_detail.html', {'order': order})
 

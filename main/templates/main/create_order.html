@@ -6,12 +6,13 @@
   <form method="POST">
       {% csrf_token %}
       <div class="Add-Company-form-group">
-        {{ form.as_p }}
+        {{ form.description }}
       </div>
+      <div class="form-error">{{ form.errors }}</div>
       <div class="Add-Company-form-actions">
           <button type="submit">Сохранить изменения</button>
       </div>
   </form>
 </div>
-
+{#{{ form.description }} form-это форма заполнения а вот description одна из fied'ов#}
 {% endblock %}

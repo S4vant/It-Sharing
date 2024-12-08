@@ -115,7 +115,8 @@ class Order(models.Model):
         max_length=50,
         choices=STATUS_CHOICES,
         default='pending',
-        verbose_name="Статус заказа"
+        verbose_name="Статус заказа",
+        blank=True
     )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания заказа")
     delivery_time = models.DateTimeField(
