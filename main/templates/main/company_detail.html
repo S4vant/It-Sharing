@@ -72,6 +72,11 @@
 
     <div class="review-list">
         <h1>Отзывы</h1>
+        {%if not reviews%}
+        <div class="review-list-none">
+        <h2>Нету отзывов</h2>
+    </div>
+        {%endif%}
     {%for review in reviews%}
         <div class="review-list-inner">
             <h3>{{ review.user.username }}</h3>

@@ -390,7 +390,8 @@ header {
 
 
 .container-profile-info {
-  margin: 20px auto;
+  
+  margin: 20px;
   background: #1f2937;
   color: #fff;
   padding: 20px;
@@ -806,6 +807,9 @@ margin-bottom: 5px;
   width: 500px;
 }
 .review-list h1{
+  text-align: center;
+}
+.review-list h2{
   text-align: center;
 }
 .review-list-inner{
