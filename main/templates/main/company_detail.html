@@ -70,19 +70,16 @@
     </div>
     {% endif %}
 
+    <div class="review-list">
+    {%for review in reviews%}
+        <div class="review-list-inner">
+            <h3>{{ review.user.username }}</h3>
+            <p>{{ review.created_at|date:"d M Y" }}</p>
+            <p>{{ review.content }}</p>
+        </div>
 
-    {% for review in reviews %}
-    <div class="review-container">
-    <div class="review-header">
-        <h3 class="review-username">{{ review.user.username }}</h3>
-        <span class="review-date">{{ review.created_at|date:"d M Y" }}</span>
-    </div>
-    <div class="review-content">
-        <p>{{ review.content }}</p>
-    </div>
-
+    {%endfor%}
 </div>
-{%endfor %}
 
 </body>
 {% endblock %}
