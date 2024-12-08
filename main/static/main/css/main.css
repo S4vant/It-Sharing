@@ -390,15 +390,13 @@ header {
 
 
 .container-profile-info {
-  max-width: 800px;
   margin: 20px auto;
   background: #1f2937;
   color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-width: 500px;
-  max-width: 750px;
+  width: 500px;
 }
 
 .container-profile-info h1{
@@ -796,4 +794,23 @@ text-decoration: none;
 }
 .Order-Container-Inner p{
 margin-bottom: 5px;
+}
+
+.review-list {
+  margin: 20px auto;
+  background: #1f2937;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+
+.review-list-inner{
+  color: #fff;
+  background: #374151;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
