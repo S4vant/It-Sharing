@@ -390,15 +390,14 @@ header {
 
 
 .container-profile-info {
-  max-width: 800px;
-  margin: 20px auto;
+  
+  margin: 10px;
   background: #1f2937;
   color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-width: 500px;
-  max-width: 750px;
+  width: 500px;
 }
 
 .container-profile-info h1{
@@ -456,7 +455,7 @@ header {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 365px;
+  height: 400px;
 }
 
 .companies-container a {
@@ -796,4 +795,28 @@ text-decoration: none;
 }
 .Order-Container-Inner p{
 margin-bottom: 5px;
+}
+
+.review-list {
+  margin: 10px;
+  background: #1f2937;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+.review-list h1{
+  text-align: center;
+}
+.review-list h2{
+  text-align: center;
+}
+.review-list-inner{
+  color: #fff;
+  background: #374151;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }

@@ -31,14 +31,18 @@
         {% endif %}
 
         {% if not request.user.is_company and not request.user.company == '' %}
-        <a href="{% url 'add_page' %}"class="btn login">Добавить компанию</a>
+
          {% else %}
-            <a href="{% url 'company_detail' user.company.id %}"><div class="edit-profile">{{ user.company.title }}</div></a>
+        <a href="{% url 'company_detail' user.company.id %}" class="btn login">{{ user.company.title }}</a>
         {% endif %}
 
         {% if request.user.is_authenticated %}
+        {% if not request.user.is_company and not request.user.company == '' %}
+        <a href="{% url 'add_page' %}"class="btn login">Добавить компанию</a>
+        {%endif%}
 				<a class="header-logo" href="{% url 'PersonalPage' %}">{{user.username}}</a>
         <a class="header-exi" href="{% url 'logout' %}">Выйти</a>
+        
 				{% else %}
 
 				  <a class="btn signup" href="{% url 'register' %}">Регистрация</a>
